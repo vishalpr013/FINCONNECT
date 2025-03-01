@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinConnect</title>
+    <title>Insurance Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<script src="https://cdn.tailwindcss.com"></script>
 <script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
@@ -105,7 +105,6 @@
             <div class="flex items-center space-x-3">
                 <!-- Google Translate Dropdown -->
                 <div id="google_translate_element"></div>
-
                 <button class="p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -114,140 +113,237 @@
                     </svg>
                 </button>
                 <button class="p-2">
-                    <a href=" profile.html">
+                    <a href=" ../profile.html">
                         <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-8 h-8 rounded-full" />
                     </a>
                 </button>
             </div>
         </div>
     </header>
-    <div id="root">
-        <section id="insurance" class="min-h-screen bg-gray-50">
-            <!-- Header -->
-            <div class="screen-header bg-white/80 border-b border-gray-200">
-                <div class="px-4 py-3 flex items-center justify-between">
+    <div class="bg-gray-100">
+        <div id="root">
+            <section id="insurance" class="min-h-screen bg-gray-50">
+                <!-- Header -->
+                <div
+                    class="screen-header bg-white/80 border-b border-gray-200 px-4 py-3 flex items-center justify-between">
                     <h1 class="text-lg font-semibold">Insurance Learning</h1>
-                    <div class="flex items-center space-x-2">
-                        <div class="bg-green-100 px-3 py-1 rounded-full">
-                            <span class="text-sm text-green-600">Level 1</span>
-                        </div>
+                    <div class="bg-green-100 px-3 py-1 rounded-full">
+                        <span class="text-sm text-green-600">Level 1</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Main Content -->
-            <div class="p-4 pb-24">
-                <!-- Insurance Types -->
-                <div class="space-y-4">
-                    <!-- Health Insurance -->
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <div class="flex items-center justify-between mb-4">
-                            <h2 class="text-lg font-semibold">Health Insurance</h2>
-                            <div class="bg-blue-100 p-2 rounded-full">
-                                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p class="text-sm">Covers medical expenses</p>
-                            </div>
-                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p class="text-sm">Cashless treatment at hospitals</p>
-                            </div>
-                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p class="text-sm">Family coverage available</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Main Content -->
+                <div class="p-4 pb-24">
+                    <!-- Insurance Types -->
+                    <div class="space-y-6">
+                        <!-- Health Insurance -->
+                        <section id="insurance" class=" bg-gray-50">
+                            <!-- Main Content -->
+                            <div class="p-4 pb-6">
+                                <!-- Insurance Types -->
+                                <div class="space-y-4">
+                                    <!-- Health Insurance -->
+                                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <h2 class="text-lg font-semibold">Health Insurance</h2>
+                                            <div class="bg-blue-100 p-2 rounded-full">
+                                                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <p class="text-sm">Covers medical expenses</p>
+                                            </div>
+                                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <p class="text-sm">Cashless treatment at hospitals</p>
+                                            </div>
+                                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <p class="text-sm">Family coverage available</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <!-- Life Insurance -->
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <div class="flex items-center justify-between mb-4">
-                            <h2 class="text-lg font-semibold">Life Insurance</h2>
-                            <div class="bg-purple-100 p-2 rounded-full">
-                                <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p class="text-sm">Financial security for family</p>
-                            </div>
-                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p class="text-sm">Low premium options</p>
-                            </div>
-                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p class="text-sm">Long-term savings benefit</p>
-                            </div>
-                        </div>
-                    </div>
+                                    <!-- Life Insurance -->
+                                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <h2 class="text-lg font-semibold">Life Insurance</h2>
+                                            <div class="bg-purple-100 p-2 rounded-full">
+                                                <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <p class="text-sm">Financial security for family</p>
+                                            </div>
+                                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <p class="text-sm">Low premium options</p>
+                                            </div>
+                                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <p class="text-sm">Long-term savings benefit</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <!-- Recommended Plans -->
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <h3 class="font-semibold mb-4">Recommended for You</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
-                                <div>
-                                    <p class="font-medium">Basic Health Cover</p>
-                                    <p class="text-sm text-gray-600">₹2L coverage</p>
+                                    <!-- Recommended Plans -->
+                                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                                        <h3 class="font-semibold mb-4">Recommended for You</h3>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                                <div>
+                                                    <p class="font-medium">Basic Health Cover</p>
+                                                    <p class="text-sm text-gray-600">₹2L coverage</p>
+                                                </div>
+                                                <button class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm">
+                                                    Learn More
+                                                </button>
+                                            </div>
+                                            <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
+                                                <div>
+                                                    <p class="font-medium">Term Life Insurance</p>
+                                                    <p class="text-sm text-gray-600">₹10L coverage</p>
+                                                </div>
+                                                <button class="px-4 py-2 bg-purple-500 text-white rounded-lg text-sm">
+                                                    Learn More
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm">
-                                    Learn More
-                                </button>
                             </div>
-                            <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
-                                <div>
-                                    <p class="font-medium">Term Life Insurance</p>
-                                    <p class="text-sm text-gray-600">₹10L coverage</p>
-                                </div>
+                        </section>
+                        <div class="inline text-center">
+                            <a href="https://youtu.be/nnVQKc7Gmmg?si=lJmAxnjHM11Wokpx">
                                 <button class="px-4 py-2 bg-purple-500 text-white rounded-lg text-sm">
-                                    Learn More
+                                    <h1>Click to learn about Insurance Learning</h1>
                                 </button>
-                            </div>
+                            </a>
+                        </div>
+                        <!-- Insurance Basics Quiz -->
+                        <div class="bg-white rounded-xl p-4 shadow-sm">
+                            <h2 class="text-lg font-semibold mb-4">Insurance Basics Quiz</h2>
+                            <form id="quizForm">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium">1. What is insurance?</p>
+                                        <label><input type="radio" name="q1" value="b"> A protection against financial
+                                            loss</label><br>
+                                        <label><input type="radio" name="q1" value="a"> A way to increase
+                                            money</label><br>
+                                        <label><input type="radio" name="q1" value="c"> A type of bank account</label>
+
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">2. What do you call the money paid regularly to keep an
+                                            insurance policy active?</p>
+                                        <label><input type="radio" name="q2" value="a"> Premium</label><br>
+                                        <label><input type="radio" name="q2" value="b"> Bonus</label><br>
+                                        <label><input type="radio" name="q2" value="c"> Tax</label>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">3. Which type of insurance covers hospital and medical
+                                            expenses?</p>
+                                        <label><input type="radio" name="q3" value="b"> Health insurance</label><br>
+                                        <label><input type="radio" name="q3" value="a"> Life insurance</label><br>
+                                        <label><input type="radio" name="q3" value="c"> Car insurance</label>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">4. What is a claim in insurance?</p>
+                                        <label><input type="radio" name="q4" value="b"> A request made to the insurance
+                                            company for payment after a loss</label><br>
+                                        <label><input type="radio" name="q4" value="a"> The money you pay to buy
+                                            insurance</label><br>
+                                        <label><input type="radio" name="q4" value="c"> A discount given by the
+                                            insurance company</label>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">5. Which type of insurance protects your family
+                                            financially
+                                            after your death?</p>
+                                        <label><input type="radio" name="q5" value="b"> Life insurance</label><br>
+                                        <label><input type="radio" name="q5" value="a"> Car insurance</label><br>
+                                        <label><input type="radio" name="q5" value="c"> Home insurance</label>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">6. True or False: Insurance helps reduce financial risk.
+                                        </p>
+                                        <label><input type="radio" name="q6" value="true"> True</label><br>
+                                        <label><input type="radio" name="q6" value="false"> False</label>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="calculateScore()"
+                                    class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-full">
+                                    Submit Quiz
+                                </button>
+                            </form>
+                            <div id="result" class="mt-4 text-center font-bold text-lg"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const correctAnswers = {
+                q1: "b",
+                q2: "a",
+                q3: "b",
+                q4: "b",
+                q5: "b",
+                q6: "true"
+            };
 
+            for (let key in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[key]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = `Your Score: ${score}/6`;
+        }
+    </script>
     <nav class="bottom-nav bg-white/80 border-t border-gray-200">
         <div class="fixed bottom-0 w-full grid grid-cols-5 px-2 py-3 bg-white border-t border-gray-200">
 
