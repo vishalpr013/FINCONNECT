@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{project.meta.ogDescription}}">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="{{project.meta.robotsMeta}}">
+
+    <title>FinConnect</title>
+    <!-- SEO Description -->
+    <meta name="description" content="FinConnect">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
+    <!-- Header Scripts -->
+    <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+            document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+    </script>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font stylesheet -->
+
+    <script type="application/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+    <!-- Core CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                DEFAULT: '{{settings.colors.primary}}',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            secondary: {
+                                DEFAULT: '{{settings.colors.secondary}}',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            accent: {
+                                DEFAULT: '{{settings.colors.accent}}',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                        },
+                        fontFamily: {
+                            sans: ['{{settings.fonts.primary}}', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                            heading: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+                            body: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+                        },
+                        spacing: {
+                            '18': '4.5rem',
+                            '22': '5.5rem',
+                            '30': '7.5rem',
+                        },
+                        maxWidth: {
+                            '8xl': '88rem',
+                            '9xl': '96rem',
+                        },
+                        animation: {
+                            'fade-in': 'fadeIn 0.5s ease-in',
+                            'fade-out': 'fadeOut 0.5s ease-out',
+                            'slide-up': 'slideUp 0.5s ease-out',
+                            'slide-down': 'slideDown 0.5s ease-out',
+                            'slide-left': 'slideLeft 0.5s ease-out',
+                            'slide-right': 'slideRight 0.5s ease-out',
+                            'scale-in': 'scaleIn 0.5s ease-out',
+                            'scale-out': 'scaleOut 0.5s ease-out',
+                            'spin-slow': 'spin 3s linear infinite',
+                            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                            'float': 'float 3s ease-in-out infinite',
+                        },
+                        keyframes: {
+                            fadeIn: {
+                                '0%': { opacity: '0' },
+                                '100%': { opacity: '1' },
+                            },
+                            fadeOut: {
+                                '0%': { opacity: '1' },
+                                '100%': { opacity: '0' },
+                            },
+                            slideUp: {
+                                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                                '100%': { transform: 'translateY(0)', opacity: '1' },
+                            },
+                            slideDown: {
+                                '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                                '100%': { transform: 'translateY(0)', opacity: '1' },
+                            },
+                            slideLeft: {
+                                '0%': { transform: 'translateX(20px)', opacity: '0' },
+                                '100%': { transform: 'translateX(0)', opacity: '1' },
+                            },
+                            slideRight: {
+                                '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                                '100%': { transform: 'translateX(0)', opacity: '1' },
+                            },
+                            scaleIn: {
+                                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                                '100%': { transform: 'scale(1)', opacity: '1' },
+                            },
+                            scaleOut: {
+                                '0%': { transform: 'scale(1.1)', opacity: '0' },
+                                '100%': { transform: 'scale(1)', opacity: '1' },
+                            },
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-10px)' },
+                            },
+                        },
+                        aspectRatio: {
+                            'portrait': '3/4',
+                            'landscape': '4/3',
+                            'ultrawide': '21/9',
+                        },
+                    },
+                },
+                variants: {
+                    extend: {
+                        opacity: ['disabled'],
+                        cursor: ['disabled'],
+                        backgroundColor: ['active', 'disabled'],
+                        textColor: ['active', 'disabled'],
+                    },
+                },
+            }
+        });
+    </script>
+
+    <!-- Utilities and Components -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Dynamic Meta Tags -->
+    <meta name="description" content="{{project.meta.ogDescription}}">
+    <meta name="keywords" content="{{project.meta.keywords}}">
+    <meta name="robots" content="{{project.meta.robotsMeta}}">
+    <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+    <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+    <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+    <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+    <meta property="og:title" content="{{project.meta.ogTitle}}">
+    <meta property="og:description" content="{{project.meta.ogDescription}}">
+    <meta property="og:image" content="{{project.meta.ogImage}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="{{project.name}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+    <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+    <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+
+    <link rel="icon" type="image/x-icon" href="{{settings.favicon}}">
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+
+            let savedLang = localStorage.getItem("selectedLanguage");
+            if (savedLang) setTimeout(() => applyLang(savedLang), 1500);
+        }
+
+        function applyLang(lang) {
+            let dropdown = document.querySelector(".goog-te-combo");
+            if (dropdown) {
+                dropdown.value = lang;
+                dropdown.dispatchEvent(new Event('change'));
+                dropdown.onchange = () => localStorage.setItem("selectedLanguage", dropdown.value);
+            } else setTimeout(() => applyLang(lang), 500);
+        }
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                var langDropdown = document.querySelector(".goog-te-combo");
+
+                if (langDropdown) {
+                    langDropdown.addEventListener("change", function () {
+                        localStorage.setItem("selectedLanguage", this.value);
+                    });
+
+
+
+                }
+            }, 2000);
+        });
+    </script>
+
+
+</head>
+<style>
+    /* Hide the Google Translate banner */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    /* Hide the inline Google Translate logo and branding */
+    .goog-logo-link,
+    .goog-te-gadget span,
+    .goog-te-gadget-simple img {
+        display: none !important;
+    }
+
+    /* Hide the "Select Language" text */
+    .goog-te-gadget {
+        font-size: 0px !important;
+    }
+
+    /* Hide "Powered by Google" */
+    .goog-te-gadget .goog-te-combo {
+        font-size: 14px !important;
+    }
+
+
+    .goog-te-gadget {
+        color: black;
+        border: 5rem;
+        border-width: 10px;
+        border-color: black;
+    }
+
+    .goog-te-gadget a {
+        display: none !important;
+    }
+
+    iframe.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-gadget {
+        font-size: 0px !important;
+    }
+
+    .goog-te-gadget span {
+        display: none;
+    }
+
+
+
+
+    body {
+        top: 0px !important;
+    }
+</style>
+
+
+
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+        Skip to main content
+    </a>
+
+    <!-- Main content area -->
+    <main id="main-content" class="flex-1 relative h-full">
+        <!-- Content will be injected here -->
+    </main>
+
+    <!-- {bodyScripts} -->
+
+    <script>window.projectId = "557a68b5-fb50-4afd-be0a-ca33f65a1c87";</script>
+    <div id='RolloutPageContent'>
+        <div id="root">
+            <section id="layout" class="app-scroll-container" x-data="{
+        activeScreen: 'voicebudget',
+        showBottomNav: true,
+        modalOpen: false,
+        scrollY: 0
+    }">
+                <!-- Sticky Header -->
+                <!-- <header class="screen-header bg-white/80 border-b border-gray-200">
+                    <div
+                        class="flex fixed top-0 left-0 w-full z-50 bg-white shadow-md py-4 px-6 flex items-center justify-between">
+                        <h1 class="text-lg font-semibold">FinConnect</h1>
+                        <div class="flex items-center space-x-3">
+                            <button class="p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                </svg>
+                            </button>
+                            <button class="p-2">
+                                <a href="components/profile.html">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Profile"
+                                        class="w-8 h-8 rounded-full" />
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </header> -->
+                <header class="screen-header bg-white/80 border-b border-gray-200">
+                    <div
+                        class="flex fixed top-0 left-0 w-full z-50 bg-white shadow-md py-4 px-6 flex items-center justify-between">
+                        <h1 class="text-lg font-semibold">FinConnect</h1>
+
+                        <div class="flex items-center space-x-3">
+                            <!-- Google Translate Dropdown -->
+                            <div id="google_translate_element"></div>
+
+                            <button class="p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                </svg>
+                            </button>
+                            <button class="p-2">
+                                <a href="components/profile.html">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Profile"
+                                        class="w-8 h-8 rounded-full" />
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <div id="root">
+                    <section id="onboarding" class="">
+                        <!-- Onboarding Carousel -->
+                        <div class="" x-data="{ step: 1 }">
+                            <!-- Progress Bar -->
+                            <div class="w-full px-6 pt-6 flex gap-2">
+                                <div class="h-1 flex-1 rounded-full" :class="step >= 1 ? 'bg-blue-500' : 'bg-gray-200'">
+                                </div>
+                                <div class="h-1 flex-1 rounded-full" :class="step >= 2 ? 'bg-blue-500' : 'bg-gray-200'">
+                                </div>
+                                <div class="h-1 flex-1 rounded-full" :class="step >= 3 ? 'bg-blue-500' : 'bg-gray-200'">
+                                </div>
+                            </div>
+
+                            <!-- Slides Container -->
+                            <div class=" px-6 py-20">
+                                <!-- Slide 1 -->
+                                <div x-show="step === 1"
+                                    class="h-full flex flex-col justify-center items-center text-center">
+                                    <div class="mb-8">
+                                        <svg class="w-24 h-24 mx-auto text-blue-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-4">Voice Based Budgeting</h2>
+                                    <p class="text-gray-600 mb-6">Simply speak your daily expenses and earnings in
+                                        your
+                                        preferred language</p>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div x-show="step === 2"
+                                    class="h-full flex flex-col justify-center items-center text-center">
+                                    <div class="mb-8">
+                                        <svg class="w-24 h-24 mx-auto text-blue-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-4">Digital Wallet</h2>
+                                    <p class="text-gray-600 mb-6">Store and manage money safely without a bank
+                                        account</p>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div x-show="step === 3"
+                                    class="h-full flex flex-col justify-center items-center text-center">
+                                    <div class="mb-8">
+                                        <svg class="w-24 h-24 mx-auto text-blue-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-4 pb-14">Financial Game</h2>
+                                    <p class="text-gray-600 mb-6">Learn about insurance, emergency funds and
+                                        investments through
+                                        fun games</p>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <div class="p-6">
+                                <template x-if="step < 3">
+                                    <button @click="step++"
+                                        class="w-full bg-blue-500 text-white rounded-lg py-4 font-semibold">
+                                        Next
+                                    </button>
+                                </template>
+                                <template x-if="step === 3">
+                                    <a href="components/budget.html">
+                                        <button class="w-full bg-blue-500 text-white rounded-lg py-4 font-semibold">
+                                            <p>Get Started</p>
+                                        </button>
+                                    </a>
+                                </template>
+                                <button @click="step = 3" x-show="step < 3"
+                                    class="w-full text-gray-500 py-4 font-medium">
+                                    Skip
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Bottom Navigation -->
+                <nav class="bottom-nav bg-white/80 border-t border-gray-200">
+                    <div class="grid grid-cols-5 px-2 py-3">
+
+                        <button class="flex flex-col items-center justify-center space-y-1 col-span-1">
+                            <a href="components/budget.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-12" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="flex flex-col items-center justify-center space-y-1">Budget</p>
+                            </a>
+                        </button>
+                        <button class="flex flex-col items-center justify-center space-y-1">
+                            <a href="components/digital_wallet.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-12" class=" flex flex-col
+                                    items-center justify-center space-y-1" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <p class="flex flex-col items-center justify-center space-y-1">Wallet</p>
+                            </a>
+                        </button>
+                        <button class="flex flex-col items-center justify-center space-y-1">
+                            <a href="components/game.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-12" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+
+                                <p class="flex flex-col items-center justify-center space-y-1">Game</p>
+                            </a>
+                        </button>
+                        <button class="flex flex-col items-center justify-center space-y-1">
+                            <a href="components/awareness.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-16" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="flex flex-col items-center justify-center space-y-1">Awareness</p>
+                            </a>
+                        </button>
+                        <button class="flex flex-col items-center justify-center space-y-1">
+                            <a href="components/profile.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-12" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                                <p class="flex flex-col items-center justify-center space-y-1">Profile</p>
+                            </a>
+                        </button>
+                    </div>
+                </nav>
+            </section>
+        </div>
+
+
+    </div>
+    <div id="page_complete">
+        <script src="/edit/edit.js"></script>
+        <script>
+            console.log('Page complete');
+
+        </script>
+    </div>
+
+</body>
+
+</html>

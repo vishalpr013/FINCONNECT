@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinConnect</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        var selectedLang = localStorage.getItem("selectedLanguage"); // Get saved language
+
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'hi,gu,fr,es,ar', // Add any languages you need
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+
+        if (selectedLang) {
+            setTimeout(function () {
+                document.querySelector(".goog-te-combo").value = selectedLang;
+                document.querySelector(".goog-te-combo").dispatchEvent(new Event('change'));
+            }, 1000);
+        }
+    }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            var langDropdown = document.querySelector(".goog-te-combo");
+
+            if (langDropdown) {
+                langDropdown.addEventListener("change", function () {
+                    localStorage.setItem("selectedLanguage", this.value);
+                });
+            }
+        }, 2000);
+    });
+</script>
+
+<style>
+    /* Hide the Google Translate banner */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    /* Hide the inline Google Translate logo and branding */
+    .goog-logo-link,
+    .goog-te-gadget span,
+    .goog-te-gadget-simple img {
+        display: none !important;
+    }
+
+    /* Hide the "Select Language" text */
+    .goog-te-gadget {
+        font-size: 0px !important;
+    }
+
+    /* Hide "Powered by Google" */
+    .goog-te-gadget .goog-te-combo {
+        font-size: 14px !important;
+    }
+
+    .goog-te-gadget {
+        color: black;
+        border: 5rem;
+        border-width: 10px;
+        border-color: black;
+    }
+
+    .goog-te-gadget a {
+        display: none !important;
+    }
+
+    iframe.skiptranslate {
+        display: none !important;
+    }
+
+    .goog-te-gadget {
+        font-size: 0px !important;
+    }
+
+    .goog-te-gadget span {
+        display: none;
+    }
+
+    body {
+        top: 0px !important;
+    }
+</style>
+
+<body>
+
+    <header class="screen-header bg-white/80 border-b border-gray-200 p-10">
+        <div class="flex fixed top-0 left-0 w-full z-50 bg-white shadow-md py-4 px-6 flex items-center justify-between">
+            <h1 class="text-lg font-semibold">FinConnect</h1>
+            <div class="flex items-center space-x-3">
+                <!-- Google Translate Dropdown -->
+                <div id="google_translate_element"></div>
+
+                <button class="p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </button>
+                <button class="p-2">
+                    <a href="profile.html">
+                        <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-8 h-8 rounded-full" />
+                    </a>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div id="root">
+        <section id="voicebudget" class="min-h-screen bg-gray-50">
+            <!-- Header -->
+
+
+            <div class="screen-header bg-white border-b border-gray-200">
+                <div class=" px-4 py-3 flex items-center justify-between">
+                    <h1 class="text-lg font-semibold">Voice Budget</h1>
+                    <button class="p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="p-4 pb-24">
+                <!-- Today's Summary -->
+                <div class="bg-white rounded-xl p-4 shadow-sm mb-6">
+                    <h2 class="text-lg font-semibold mb-3">Today's Summary</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-600">Income</p>
+                            <p id="income" class="text-xl font-bold text-green-700">₹0</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <p class="text-sm text-red-600">Expense</p>
+                            <p id="expense" class="text-xl font-bold text-red-700">₹0</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Transaction Input Section -->
+                <div class="bg-white rounded-lg shadow p-4 mt-4">
+                    <h2 class="text-lg font-semibold mb-3">Add Transaction</h2>
+                    <input type="text" id="manualInput" placeholder="Enter transaction (e.g., 'I spent 200 on food')"
+                        class="w-full p-2 border rounded-lg">
+                    <button onclick="processManualEntry()"
+                        class="mt-2 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+                        Add Transaction
+                    </button>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        let totalIncome = 0;
+                        let totalExpense = 0;
+
+                        function addTransaction(amount, type) {
+                            if (type === "income") {
+                                totalIncome += amount;
+                            } else if (type === "expense") {
+                                totalExpense += amount;
+                            }
+                            updateSummary();
+                        }
+
+                        function updateSummary() {
+                            document.getElementById("income").innerText = `₹${totalIncome}`;
+                            document.getElementById("expense").innerText = `₹${totalExpense}`;
+                        }
+
+                        // Example: Automatically adding some transactions
+                        setTimeout(() => {
+                            addTransaction(0, "income");  // Adding ₹450 income
+                            addTransaction(0, "expense"); // Adding ₹200 expense
+                        }, 1000); // Runs after 1 second (for demo)
+                    });
+                </script>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-center mb-4">Voice Budget Tracker</h2>
+
+                    <div class="text-center py-4">
+                        <button onclick="startListening()"
+                            class="w-24 h-24 rounded-full bg-blue-500 flex items-center justify-center mx-auto shadow-md hover:bg-blue-600 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3C10.343 3 9 4.343 9 6v6c0 1.657 1.343 3 3 3s3-1.343 3-3V6c0-1.657-1.343-3-3-3zM19 10v2a7 7 0 01-14 0v-2M12 19v2m-4 0h8" />
+                            </svg>
+                        </button>
+                        <p id="status" class="text-gray-600 mt-2">Tap to speak your transaction</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow p-4 mt-4">
+                        <h2 class="text-lg font-semibold mb-3">Recent Transactions</h2>
+                        <div id="transactions" class="space-y-2">
+                            <!-- Transactions will be added here -->
+                        </div>
+                        <p id="total" class="text-lg font-bold mt-3">Total: ₹0</p>
+                    </div>
+                </div>
+
+                <script>
+                    let totalAmount = 0;
+                    let totalIncome = 0;
+                    let totalExpense = 0;
+                    const categories = ["food", "rent", "shopping", "salary", "entertainment", "other"];
+
+                    function startListening() {
+                        let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                        recognition.lang = 'en-IN';
+                        recognition.start();
+
+                        recognition.onstart = function () {
+                            document.getElementById("status").innerText = "🎤 Listening...";
+                        };
+
+                        recognition.onspeechend = function () {
+                            recognition.stop();
+                            document.getElementById("status").innerText = "Processing...";
+                        };
+
+                        recognition.onresult = function (event) {
+                            let spokenText = event.results[0][0].transcript.toLowerCase();
+                            document.getElementById("status").innerText = "You said: " + spokenText;
+                            processBudget(spokenText);
+                        };
+                    }
+
+                    function processManualEntry() {
+                        let text = document.getElementById("manualInput").value.trim().toLowerCase();
+                        if (text) {
+                            processBudget(text);
+                            document.getElementById("manualInput").value = ""; // Clear input box after processing
+                        }
+                    }
+
+                    function wordsToNumbers(text) {
+                        const numberWords = {
+                            "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9,
+                            "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+                            "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
+                            "hundred": 100,"thousand":1000
+                        };
+
+                        let words = text.split(" ");
+                        let num = 0, temp = 0;
+
+                        words.forEach(word => {
+                            if (numberWords[word] !== undefined) {
+                                if (word === "hundred") {
+                                    temp *= 100;
+                                } else {
+                                    temp += numberWords[word];
+                                }
+                            } else if (!isNaN(parseInt(word))) {
+                                temp += parseInt(word);
+                            }
+                        });
+
+                        num += temp;
+                        return num;
+                    }
+
+                    function processBudget(text) {
+                        let amount = wordsToNumbers(text) || parseInt(text.match(/\d+/));
+
+                        if (!amount || amount <= 0) {
+                            document.getElementById("status").innerText = "Could not detect amount! Please try again.";
+                            return;
+                        }
+
+                        let sign = text.includes("saved") ? "plus" : text.includes("spent") ? "minus" : null;
+                        let category = categories.find(cat => text.includes(cat)) || "other";
+
+                        let finalValue = sign === "plus" ? amount : -amount;
+                        totalAmount += finalValue;
+
+                        let transactionsDiv = document.getElementById("transactions");
+                        let transactionHTML = `
+        <div class="flex items-center justify-between py-2 border-b">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 rounded-full ${sign === 'plus' ? 'bg-green-100' : 'bg-red-100'}">
+                    <svg class="w-6 h-6 ${sign === 'plus' ? 'text-green-500' : 'text-red-500'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${sign === 'plus' ? 'M12 4v16m8-8H4' : 'M5 13l4 4L19 7'}" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="font-medium">${category.charAt(0).toUpperCase() + category.slice(1)}</p>
+                    <p class="text-sm text-gray-500">Just now</p>
+                </div>
+            </div>
+            <p class="${sign === 'plus' ? 'text-green-500' : 'text-red-500'} font-medium">${sign === 'plus' ? '+' : '-'}₹${amount}</p>
+        </div>`;
+
+                        transactionsDiv.innerHTML = transactionHTML + transactionsDiv.innerHTML;
+                        document.getElementById("total").innerText = `Total: ₹${totalAmount}`;
+
+                        if (sign === "plus") {
+                            addTransaction(amount, "income");
+                        } else {
+                            addTransaction(amount, "expense");
+                        }
+
+                        document.getElementById("status").innerText = `Added ₹${sign === 'plus' ? '+' : '-'}${amount} under ${category}`;
+                    }
+
+                    function addTransaction(amount, type) {
+                        if (type === "income") {
+                            totalIncome += amount;
+                        } else if (type === "expense") {
+                            totalExpense += amount;
+                        }
+                        updateSummary();
+                    }
+
+                    function updateSummary() {
+                        document.getElementById("income").innerText = `₹${totalIncome}`;
+                        document.getElementById("expense").innerText = `₹${totalExpense}`;
+                    }
+
+                </script>
+            </div>
+        </section>
+    </div>
+    <nav class="bottom-nav bg-white/80 border-t border-gray-200">
+        <div class="fixed bottom-0 w-full grid grid-cols-5 px-2 py-3 bg-white border-t border-gray-200">
+
+
+            <button class="flex flex-col items-center justify-center space-y-1 col-span-1">
+                <a href="budget.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-12" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="flex flex-col items-center justify-center space-y-1">Budget</p>
+                </a>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 ">
+                <a href="digital_wallet.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-12" class="flex flex-col items-center
+                        justify-center space-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <p class="flex flex-col items-center justify-center space-y-1">Wallet</p>
+                </a>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 col-span-1">
+                <a href="game.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-12" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+
+                    <p class="flex flex-col items-center justify-center space-y-1">Game</p>
+                </a>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 col-span-1">
+                <a href="awareness.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-16" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="flex flex-col items-center justify-center space-y-1">Awareness</p>
+                </a>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 col-span-1">
+                <a href="profile.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-11" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <p class="flex flex-col items-center justify-center space-y-1">Profile</p>
+                </a>
+            </button>
+        </div>
+
+    </nav>
+
+</body>
+
+</html>
