@@ -227,10 +227,32 @@
                     let totalExpense = 0;
                     const categories = ["food", "rent", "shopping", "salary", "entertainment", "other"];
 
+
                     function startListening() {
+                        // Check if speech recognition is supported
+                        if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
+                            document.getElementById("status").innerText = "Speech recognition is not supported in this browser/device. Please use the text input instead.";
+                            // Hide the microphone button and show a message
+                            document.querySelector('button[onclick="startListening()"]').style.display = 'none';
+                            return;
+                        }
+
                         let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
                         recognition.lang = 'en-IN';
-                        recognition.start();
+
+                        // Add error handling
+                        recognition.onerror = function (event) {
+                            switch (event.error) {
+                                case 'not-allowed':
+                                    document.getElementById("status").innerText = "Microphone permission denied. Please enable it in your settings.";
+                                    break;
+                                case 'no-speech':
+                                    document.getElementById("status").innerText = "No speech was detected. Please try again.";
+                                    break;
+                                default:
+                                    document.getElementById("status").innerText = "Error occurred. Please use the text input instead.";
+                            }
+                        };
 
                         recognition.onstart = function () {
                             document.getElementById("status").innerText = "🎤 Listening...";
@@ -246,6 +268,13 @@
                             document.getElementById("status").innerText = "You said: " + spokenText;
                             processBudget(spokenText);
                         };
+
+                        // Add try-catch block for starting recognition
+                        try {
+                            recognition.start();
+                        } catch (err) {
+                            document.getElementById("status").innerText = "Error starting speech recognition. Please use the text input.";
+                        }
                     }
 
                     function processManualEntry() {
@@ -261,7 +290,7 @@
                             "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9,
                             "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
                             "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
-                            "hundred": 100,"thousand":1000
+                            "hundred": 100, "thousand": 1000
                         };
 
                         let words = text.split(" ");
