@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{project.meta.ogDescription}}">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="{{project.meta.robotsMeta}}">
+
+    <title>FinConnect</title>
+    <!-- SEO Description -->
+    <meta name="description" content="FinConnect">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
+    <!-- Header Scripts -->
+    <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+            document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+    </script>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font stylesheet -->
+
+    <script type="application/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+    <!-- Core CSS -->
+    <title>FinConnect - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                DEFAULT: '{{settings.colors.primary}}',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            secondary: {
+                                DEFAULT: '{{settings.colors.secondary}}',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            accent: {
+                                DEFAULT: '{{settings.colors.accent}}',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                        },
+                        fontFamily: {
+                            sans: ['{{settings.fonts.primary}}', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                            heading: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+                            body: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+                        },
+                        spacing: {
+                            '18': '4.5rem',
+                            '22': '5.5rem',
+                            '30': '7.5rem',
+                        },
+                        maxWidth: {
+                            '8xl': '88rem',
+                            '9xl': '96rem',
+                        },
+                        animation: {
+                            'fade-in': 'fadeIn 0.5s ease-in',
+                            'fade-out': 'fadeOut 0.5s ease-out',
+                            'slide-up': 'slideUp 0.5s ease-out',
+                            'slide-down': 'slideDown 0.5s ease-out',
+                            'slide-left': 'slideLeft 0.5s ease-out',
+                            'slide-right': 'slideRight 0.5s ease-out',
+                            'scale-in': 'scaleIn 0.5s ease-out',
+                            'scale-out': 'scaleOut 0.5s ease-out',
+                            'spin-slow': 'spin 3s linear infinite',
+                            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                            'float': 'float 3s ease-in-out infinite',
+                        },
+                        keyframes: {
+                            fadeIn: {
+                                '0%': { opacity: '0' },
+                                '100%': { opacity: '1' },
+                            },
+                            fadeOut: {
+                                '0%': { opacity: '1' },
+                                '100%': { opacity: '0' },
+                            },
+                            slideUp: {
+                                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                                '100%': { transform: 'translateY(0)', opacity: '1' },
+                            },
+                            slideDown: {
+                                '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                                '100%': { transform: 'translateY(0)', opacity: '1' },
+                            },
+                            slideLeft: {
+                                '0%': { transform: 'translateX(20px)', opacity: '0' },
+                                '100%': { transform: 'translateX(0)', opacity: '1' },
+                            },
+                            slideRight: {
+                                '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                                '100%': { transform: 'translateX(0)', opacity: '1' },
+                            },
+                            scaleIn: {
+                                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                                '100%': { transform: 'scale(1)', opacity: '1' },
+                            },
+                            scaleOut: {
+                                '0%': { transform: 'scale(1.1)', opacity: '0' },
+                                '100%': { transform: 'scale(1)', opacity: '1' },
+                            },
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-10px)' },
+                            },
+                        },
+                        aspectRatio: {
+                            'portrait': '3/4',
+                            'landscape': '4/3',
+                            'ultrawide': '21/9',
+                        },
+                    },
+                },
+                variants: {
+                    extend: {
+                        opacity: ['disabled'],
+                        cursor: ['disabled'],
+                        backgroundColor: ['active', 'disabled'],
+                        textColor: ['active', 'disabled'],
+                    },
+                },
+            }
+        });
+    </script>
+
+    <!-- Utilities and Components -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Dynamic Meta Tags -->
+    <meta name="description" content="{{project.meta.ogDescription}}">
+    <meta name="keywords" content="{{project.meta.keywords}}">
+    <meta name="robots" content="{{project.meta.robotsMeta}}">
+    <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+    <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+    <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+    <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+    <meta property="og:title" content="{{project.meta.ogTitle}}">
+    <meta property="og:description" content="{{project.meta.ogDescription}}">
+    <meta property="og:image" content="{{project.meta.ogImage}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="{{project.name}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+    <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+    <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+
+    <link rel="icon" type="image/x-icon" href="{{settings.favicon}}">
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+
+            let savedLang = localStorage.getItem("selectedLanguage");
+            if (savedLang) setTimeout(() => applyLang(savedLang), 1500);
+        }
+
+        function applyLang(lang) {
+            let dropdown = document.querySelector(".goog-te-combo");
+            if (dropdown) {
+                dropdown.value = lang;
+                dropdown.dispatchEvent(new Event('change'));
+                dropdown.onchange = () => localStorage.setItem("selectedLanguage", dropdown.value);
+            } else setTimeout(() => applyLang(lang), 500);
+        }
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                var langDropdown = document.querySelector(".goog-te-combo");
+
+                if (langDropdown) {
+                    langDropdown.addEventListener("change", function () {
+                        localStorage.setItem("selectedLanguage", this.value);
+                    });
+
+
+
+                }
+            }, 2000);
+        });
+    </script>
+
+
+</head>
+
+<body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-md w-full space-y-8 bg-white p-6 rounded-xl shadow-lg">
+            <!-- Step 1: Phone Number Input -->
+            <div id="phoneStep" class="space-y-6">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-900">Welcome to FinConnect</h2>
+                    <p class="mt-2 text-gray-600">Enter your mobile number to continue</p>
+                </div>
+                <form class="space-y-4" id="phoneForm">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                        <div class="mt-1 relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">+91</span>
+                            <input type="tel" id="phone" required pattern="[0-9]{10}"
+                                class="block w-full pl-12 pr-3 py-2 border border-gray-300 rounded-md"
+                                placeholder="Enter 10 digit number">
+                        </div>
+                    </div>
+                    <button type="submit" 
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+                        Send OTP
+                    </button>
+                </form>
+            </div>
+
+            <!-- Step 2: OTP Verification -->
+            <div id="otpStep" class="space-y-6 hidden">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-900">Verify OTP</h2>
+                    <p class="mt-2 text-gray-600">Enter the OTP sent to your mobile</p>
+                </div>
+                <form class="space-y-4" id="otpForm">
+                    <div class="flex justify-center space-x-2">
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md" required>
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md" required>
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md" required>
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md" required>
+                    </div>
+                    <button type="submit"
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+                        Verify OTP
+                    </button>
+                </form>
+            </div>
+
+            <!-- Step 3: User Details -->
+            <div id="detailsStep" class="space-y-6 hidden">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-900">Complete Your Profile</h2>
+                    <p class="mt-2 text-gray-600">Please fill in your details</p>
+                </div>
+                <form class="space-y-4" id="detailsForm">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Age</label>
+                        <input type="number" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Occupation</label>
+                        <select required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md">
+                            <option value="">Select Occupation</option>
+                            <option value="student">Student</option>
+                            <option value="employed">Employed</option>
+                            <option value="business">Business</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit"
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+                        Complete Registration
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle form steps
+        const phoneForm = document.getElementById('phoneForm');
+        const otpForm = document.getElementById('otpForm');
+        const detailsForm = document.getElementById('detailsForm');
+
+        phoneForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically make an API call to send OTP
+            document.getElementById('phoneStep').classList.add('hidden');
+            document.getElementById('otpStep').classList.remove('hidden');
+        });
+
+        otpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically verify the OTP
+            document.getElementById('otpStep').classList.add('hidden');
+            document.getElementById('detailsStep').classList.remove('hidden');
+        });
+
+        detailsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically save the user details
+            // After successful registration, redirect to home page
+            window.location.href = 'Finconnect.html';
+        });
+
+        // Auto-focus next OTP input
+        const otpInputs = document.querySelectorAll('#otpForm input');
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+    // ... existing HTML ...
+
+    <script>
+    const API_BASE_URL = 'http://localhost:3000/api';
+    
+    phoneForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const phoneInput = document.getElementById('phone');
+        const submitButton = phoneForm.querySelector('button[type="submit"]');
+        const phoneNumber = '+91' + phoneInput.value; // Add India country code
+        
+        try {
+            // Disable form while processing
+            phoneInput.disabled = true;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+    
+            const response = await fetch(`${API_BASE_URL}/send-otp`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phoneNumber })
+            });
+    
+            const data = await response.json();
+            
+            if (data.success) {
+                // Store phone number for later use
+                sessionStorage.setItem('phoneNumber', phoneNumber);
+                
+                // Show success message
+                alert('OTP sent successfully! Please check your phone.');
+                
+                // Switch to OTP step
+                document.getElementById('phoneStep').classList.add('hidden');
+                document.getElementById('otpStep').classList.remove('hidden');
+            } else {
+                alert(data.message || 'Failed to send OTP. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to send OTP. Please try again.');
+        } finally {
+            // Re-enable form
+            phoneInput.disabled = false;
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send OTP';
+        }
+    });
+    
+    otpForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const otpInputs = document.querySelectorAll('#otpForm input');
+        const submitButton = otpForm.querySelector('button[type="submit"]');
+        const otp = Array.from(otpInputs).map(input => input.value).join('');
+        const phoneNumber = sessionStorage.getItem('phoneNumber');
+    
+        try {
+            // Disable form while processing
+            otpInputs.forEach(input => input.disabled = true);
+            submitButton.disabled = true;
+            submitButton.textContent = 'Verifying...';
+    
+            const response = await fetch(`${API_BASE_URL}/verify-otp`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    phoneNumber,
+                    otp 
+                })
+            });
+    
+            const data = await response.json();
+            
+            if (data.success) {
+                // Switch to details step
+                document.getElementById('otpStep').classList.add('hidden');
+                document.getElementById('detailsStep').classList.remove('hidden');
+            } else {
+                alert(data.message || 'Invalid OTP. Please try again.');
+                // Clear OTP inputs
+                otpInputs.forEach(input => input.value = '');
+                otpInputs[0].focus();
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to verify OTP. Please try again.');
+        } finally {
+            // Re-enable form
+            otpInputs.forEach(input => input.disabled = false);
+            submitButton.disabled = false;
+            submitButton.textContent = 'Verify OTP';
+        }
+    });
+    
+    // ... rest of your existing code ...
+    </script>
+</body>
+</html>
