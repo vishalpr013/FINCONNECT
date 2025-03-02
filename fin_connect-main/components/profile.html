@@ -156,19 +156,31 @@
                 <!-- Progress Stats -->
                 <div class="grid grid-cols-3 gap-4 mb-6">
                     <div class="bg-white rounded-xl p-4 text-center">
-                        <div class="text-2xl font-bold text-blue-500 mb-1">12</div>
+                        <div id="profile-streak" class="text-2xl font-bold text-blue-500 mb-1">0</div>
                         <p class="text-xs text-gray-600">Days Streak</p>
                     </div>
                     <div class="bg-white rounded-xl p-4 text-center">
-                        <div class="text-2xl font-bold text-green-500 mb-1">250</div>
+                        <div id="profile-points" class="text-2xl font-bold text-green-500 mb-1">0</div>
                         <p class="text-xs text-gray-600">Points</p>
                     </div>
                     <div class="bg-white rounded-xl p-4 text-center">
-                        <div class="text-2xl font-bold text-purple-500 mb-1">2</div>
+                        <div id="profile-level" class="text-2xl font-bold text-purple-500 mb-1">1</div>
                         <p class="text-xs text-gray-600">Level</p>
                     </div>
                 </div>
                 
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        let savedPoints = localStorage.getItem("userPoints");
+                        let savedStreak = localStorage.getItem("userStreak");
+                        let savedLevel = localStorage.getItem("userLevel");
+
+                        if (savedPoints) document.getElementById("profile-points").innerText = savedPoints;
+                        if (savedStreak) document.getElementById("profile-streak").innerText = savedStreak;
+                        if (savedLevel) document.getElementById("profile-level").innerText = savedLevel;
+                    });
+
+                </script>
                 <div>
                     <a href="leaderboard.html">
                         <button class="flex justify-center text-center h-12 w-full text-lg">

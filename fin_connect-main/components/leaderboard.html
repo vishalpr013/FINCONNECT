@@ -176,6 +176,12 @@
                 player.streak += 1;
                 player.level = Math.floor(player.points / 100) + 1; // Level up every 100 points
 
+                // Save to localStorage
+                localStorage.setItem("userPoints", player.points);
+                localStorage.setItem("userStreak", player.streak);
+                localStorage.setItem("userLevel", player.level);
+
+                // Update UI
                 document.getElementById("points").innerText = player.points;
                 document.getElementById("streak").innerText = player.streak + "🔥";
                 document.getElementById("level").innerText = player.level;
@@ -184,7 +190,18 @@
             }
         }
 
-        updateLeaderboard();
+        // Load saved values from localStorage when page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            let savedPoints = localStorage.getItem("userPoints");
+            let savedStreak = localStorage.getItem("userStreak");
+            let savedLevel = localStorage.getItem("userLevel");
+
+            if (savedPoints) document.getElementById("points").innerText = savedPoints;
+            if (savedStreak) document.getElementById("streak").innerText = savedStreak + "🔥";
+            if (savedLevel) document.getElementById("level").innerText = savedLevel;
+        });
+
+
     </script>
     <nav class="bottom-nav bg-white/80 border-t border-gray-200">
         <div class="fixed bottom-0 w-full grid grid-cols-5 px-2 py-3 bg-white border-t border-gray-200">
