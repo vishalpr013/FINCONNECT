@@ -398,7 +398,6 @@
             });
         });
     </script>
-    // ... existing HTML ...
 
     <script>
         const API_BASE_URL = 'http://localhost:3000/api';
@@ -437,11 +436,11 @@
                     document.getElementById('phoneStep').classList.add('hidden');
                     document.getElementById('otpStep').classList.remove('hidden');
                 } else {
-                    alert(data.message || 'Failed to send OTP. Please try again.');
+                    console(data.message || 'Failed to send OTP. Please try again.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Failed to send OTP. Please try again.');
+                
             } finally {
                 // Re-enable form
                 phoneInput.disabled = false;
@@ -489,7 +488,6 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Failed to verify OTP. Please try again.');
             } finally {
                 // Re-enable form
                 otpInputs.forEach(input => input.disabled = false);
